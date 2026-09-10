@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://c3yh7d3vfpoqk"]
+
+[ext_resource type="FontFile" uid="uid://c4lqrcw1qmy4j" path="res://assets/ComicoroRu_0.ttf" id="1_niknu"]
+[ext_resource type="Texture2D" uid="uid://cok3586dp7deg" path="res://assets/icon-3.png" id="2_54qjm"]
+[ext_resource type="Script" uid="uid://c5p18cw30gm61" path="res://scripts/ui.gd" id="2_ysu20"]
+[ext_resource type="Texture2D" uid="uid://j0wtj5unx3rd" path="res://assets/sprite.png" id="3_ysu20"]
+
+[sub_resource type="Theme" id="Theme_mp7mn"]
+default_font = ExtResource("1_niknu")
+
+[sub_resource type="Theme" id="Theme_osw3t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujf4h"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tpdf0"]
+texture = SubResource("AtlasTexture_ujf4h")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_87twr"]
+default_font = ExtResource("1_niknu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_own74"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(33, 0, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67a8a"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mp7mn"]
+texture = SubResource("AtlasTexture_67a8a")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7tev"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(32, 17, 33, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_niknu"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(29, 34, 35, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cirv"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(0, 47, 35, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gahai"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(35, 48, 30, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo75q"]
+atlas = ExtResource("3_ysu20")
+region = Rect2(3, 20, 26, 25)
+
+[node name="Ui_tscn" type="Control" unique_id=313664120 node_paths=PackedStringArray("hearts_container", "Lv_label", "Name_label", "time_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_mp7mn")
+script = ExtResource("2_ysu20")
+hearts_container = NodePath("VBoxContainer/UserHBoxContainer/VBoxContainer/HpFlowContainer")
+Lv_label = NodePath("VBoxContainer/LvBoxContainer/LvTextureRect/LVLabel")
+Name_label = NodePath("VBoxContainer/UserHBoxContainer/VBoxContainer/NameLabel")
+time_label = NodePath("VBoxContainer/Stats/TimeBoxContainer/TimeLabel")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=210491234]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.95289975, 0.3506564, 0.31354052, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=972011302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_right = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02124, 1.0713092)
+
+[node name="UserHBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=166994682]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/UserHBoxContainer" unique_id=820039119]
+layout_mode = 2
+theme = SubResource("Theme_osw3t")
+theme_override_styles/panel = SubResource("StyleBoxTexture_tpdf0")
+accessibility_region = true
+
+[node name="UserTextureRect" type="TextureRect" parent="VBoxContainer/UserHBoxContainer/PanelContainer" unique_id=722572582]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = SubResource("Theme_87twr")
+texture = ExtResource("2_54qjm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/UserHBoxContainer" unique_id=187070783]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/UserHBoxContainer/VBoxContainer" unique_id=276189304]
+layout_mode = 2
+size_flags_vertical = 1
+text = "lele"
+vertical_alignment = 3
+
+[node name="HpFlowContainer" type="HBoxContainer" parent="VBoxContainer/UserHBoxContainer/VBoxContainer" unique_id=1826667165]
+layout_mode = 2
+
+[node name="LvBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=510109456]
+layout_mode = 2
+
+[node name="LvTextureRect" type="TextureRect" parent="VBoxContainer/LvBoxContainer" unique_id=2052800272]
+layout_mode = 2
+texture = SubResource("AtlasTexture_own74")
+
+[node name="LVLabel" type="Label" parent="VBoxContainer/LvBoxContainer/LvTextureRect" unique_id=441020382]
+layout_mode = 0
+offset_left = 34.666637
+offset_top = -0.14939737
+offset_right = 74.66664
+offset_bottom = 89.8506
+scale = Vector2(0.16559324, 0.19029365)
+theme_override_font_sizes/font_size = 95
+text = "1"
+
+[node name="Stats" type="HBoxContainer" parent="VBoxContainer" unique_id=2041290651]
+layout_mode = 2
+
+[node name="StatsPanelContainer" type="PanelContainer" parent="VBoxContainer/Stats" unique_id=1371624712]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mp7mn")
+
+[node name="StatsGridContainer" type="GridContainer" parent="VBoxContainer/Stats/StatsPanelContainer" unique_id=334421466]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 2
+
+[node name="Hp" type="HBoxContainer" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer" unique_id=252389046]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HpTextureRect" type="TextureRect" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Hp" unique_id=905406071]
+layout_mode = 2
+texture = SubResource("AtlasTexture_n7tev")
+
+[node name="HpLabel" type="Label" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Hp" unique_id=1585051639]
+layout_mode = 2
+text = "5"
+
+[node name="Hov" type="HBoxContainer" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer" unique_id=1381943659]
+layout_mode = 2
+
+[node name="HovTextureRect" type="TextureRect" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Hov" unique_id=1598812553]
+layout_mode = 2
+texture = SubResource("AtlasTexture_niknu")
+
+[node name="HovLabel" type="Label" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Hov" unique_id=164125725]
+layout_mode = 2
+text = "5"
+
+[node name="Bag" type="HBoxContainer" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer" unique_id=798240372]
+layout_mode = 2
+
+[node name="BagTextureRect" type="TextureRect" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Bag" unique_id=1428939414]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6cirv")
+
+[node name="BagLabel" type="Label" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Bag" unique_id=1600602066]
+layout_mode = 2
+text = "5"
+
+[node name="Wg" type="HBoxContainer" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer" unique_id=884911760]
+layout_mode = 2
+
+[node name="WgTextureRect" type="TextureRect" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Wg" unique_id=1167653185]
+layout_mode = 2
+texture = SubResource("AtlasTexture_gahai")
+
+[node name="WgLabel" type="Label" parent="VBoxContainer/Stats/StatsPanelContainer/StatsGridContainer/Wg" unique_id=658200555]
+layout_mode = 2
+text = "5"
+
+[node name="TimeBoxContainer" type="HBoxContainer" parent="VBoxContainer/Stats" unique_id=2052631047]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="TimeTextureRect" type="TextureRect" parent="VBoxContainer/Stats/TimeBoxContainer" unique_id=1461470440]
+layout_mode = 2
+texture = SubResource("AtlasTexture_fo75q")
+stretch_mode = 2
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer/Stats/TimeBoxContainer" unique_id=1227923660]
+layout_mode = 2
+text = "00:00"
